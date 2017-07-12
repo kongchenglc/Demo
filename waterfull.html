@@ -41,7 +41,7 @@
 	function preload() {
 		var container = document.getElementById("container");
 		var newBox, newPic, newImg;
-		for(let i = 0; i < 10; i++ ) {
+		for(let i = 0; i < 20; i++ ) {
 			newBox = document.createElement("div");
 			newBox.className = "box";
 			container.appendChild(newBox);
@@ -56,7 +56,7 @@
 			}
 			newPic.appendChild(newImg);
 			imgsNumber++;
-			waterFull();
+			setTimeout(waterFull, 100);
 		}
 	}
 
@@ -100,7 +100,7 @@
 				}
 				newPic.appendChild(newImg);
 				imgsNumber++;
-				setTimeout(waterFull, 50);
+				setTimeout(waterFull, 100);
 			}
 		}
 	}
