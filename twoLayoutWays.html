@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            overflow: hidden;
+            padding: 0 205px;
+        }
+        .middle {
+            background-color: #999;
+            height: 100vh;
+            width: 100%;
+            float: left;
+        }
+        .left {
+            background-color: #ccc;
+            width: 200px;
+            height: 100vh;
+            margin-left: -100%;
+            float: left;
+            position: relative;
+            left: -205px;
+        }
+        .right {
+            background-color: #eee;
+            width: 200px;
+            height: 100vh;
+            margin-left: -200px;
+            float: left;
+            position: relative;
+            right: -205px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="middle"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双飞翼布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            overflow: hidden;
+            /*padding: 0 200px;*/       /*与圣杯布局的差异*/
+        }
+        .middle-in {
+            margin: 0 205px;
+            background-color: #999;
+            height: 100%;
+        }
+        .middle-out {
+            height: 100vh;
+            width: 100%;
+            float: left;
+        }
+        .left {
+            background-color: #ccc;
+            width: 200px;
+            height: 100vh;
+            margin-left: -100%;
+            float: left;
+/*            position: relative;
+            left: -200px;*/            /*与圣杯布局的差异*/
+        }
+        .right {
+            background-color: #eee;
+            width: 200px;
+            height: 100vh;
+            margin-left: -200px;
+            float: left;
+/*            position: relative;
+            right: -200px;*/           /*与圣杯布局的差异*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="middle-out">       <!-- 与圣杯布局的差异 -->
+            <div class="middle-in"></div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html> -->

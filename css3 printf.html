@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3 printf</title>
+    <style>
+        *{margin:0;padding:0;}
+        body {
+            background-color: black;
+        }
+        @keyframes typing { from { width: 0; } }
+        @keyframes blink-caret { 50% { border-color: transparent; } }
+        h1 {
+            display: inline-block;
+            color: lime;
+            font: bold 200% Consolas;
+            /*font: bold 200% "Source Code Pro";*/
+            /*必须使用等宽字体*/
+            border-right: .1em solid currentColor;
+            width: 32ch; 
+            margin: 2em 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(32, end),
+                    blink-caret .5s step-end infinite alternate;   
+                    /*step-end每个关键帧在end处跳转，infinite无限循环播放，alternate来回播放，normal顺序播放*/
+        }
+    </style>
+</head>
+<body>
+    <h1>This is a css3 printf animation!</h1>
+</body>
+</ html>

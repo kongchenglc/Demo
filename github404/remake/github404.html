@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>github404</title>
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		#field {
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			width: 100%;
+			height: 370px;
+		}
+		.img_bg {
+			position: absolute;
+			top: -11px;
+			left: -20px;
+			width: 110%;
+			height: 425px;
+		}
+		.img_text {
+			position: absolute;
+			z-index: 8;
+		}
+		.img_cat {
+			position: absolute;
+			z-index: 7;
+		}
+		.img_speeder {
+			position: absolute;
+			z-index: 6;
+		}
+		.img_cat_shadow {
+			position: absolute;
+			z-index: 5;
+		}
+		.img_speeder_shadow {
+			position: absolute;
+			z-index: 4;
+		}
+		.img_building_1 {
+			position: absolute;
+			z-index: 3;
+		}
+		.img_building_2 {
+			position: absolute;
+			z-index: 2;
+		}
+
+	</style>
+	<script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="field">
+			<img class="img_bg" src="field.jpg">
+		</div>
+		<div id="pictures">
+			<img class="img_text" src="text.png" alt="This not the web page you are looking for">
+			<img class="img_cat" src="cat.png">
+			<img class="img_cat_shadow" src="cat_shadow.png">
+			<img class="img_speeder" src="speeder.png">                        
+            <img class="img_speeder_shadow" src="speeder_shadow.png">            
+            <img class="img_building_1" src="buliding_1.png">
+            <img class="img_building_2" src="building_2.png">                        
+		</div>
+	</div>
+	<script>
+		$(function() {
+			var window_width, window_height, 
+				field_width, field_height, 
+				rate_w, rate_h, 
+				field, text, cat, cat_shadow, speeder, speeder_shadow, buliding_1, building_2;
+
+			window_width = document.body.clientWidth;
+			window_height = document.body.clientHeight;
+			
+			field = document.getElementById('field');
+			field_width = field.offsetWidth;
+			field_height = field.offsetHeight;
+
+			rate_w = field_width / window_width;
+			rate_h = field_height / window_height;
+
+			var imgArray = {
+				bg : { left: -780, top: -200 ,scale: 0.06, isFont: false },
+				text : { left: -500, top: -120, scale: 0.03, isFont: true },	
+				cat : { left: -200, top: -100 ,scale: 0.02, isFont: true },
+				cat_shadow : { left: -189, top: 100 ,scale: 0.02, isFont: true },
+				speeder : { left: -70, top: -40 ,scale: 0.01, isFont: true },
+				speeder_shadow : { left: -70, top: 75 ,scale: 0.01, isFont: true },
+				building_1 : { left: 20, top: -111 ,scale: 0.03, isFont: false },
+				building_2 : { left: 300, top: -60 ,scale: 0.05, isFont: false },
+			};
+
+			(function() {
+				$.each( imgArray, function( i, id ) {
+					var $img = $(".img_" + i);
+					var offset_w = rate_w * window_width / 2 * id.scale;
+					var offset_h = rate_h * window_height / 2 * id.scale;
+					if( id.isFont == true ) {
+						$img.css({ "left": field_width / 2 + offset_w + id.left, 
+								   "top": field_height / 2 + offset_h + id.top
+								});
+					} else {
+						$img.css({ "left": field_width / 2 - offset_w + id.left, 
+								   "top": field_height / 2 - offset_h + id.top
+							    });
+					}
+				})
+			})();
+
+			var picMove = function(pageX, pageY) {
+				$.each( imgArray, function( i, id ) {
+					var $img = $(".img_" + i);
+					var offset_w = rate_w * pageX * id.scale;
+					var offset_h = rate_h * pageY * id.scale;
+					if( id.isFont == true ) {
+						$img.css({ "left": field_width / 2 + offset_w + id.left, 
+								   "top": field_height / 2 + offset_h + id.top
+								});
+					} else {
+						$img.css({ "left": field_width / 2 - offset_w + id.left, 
+								   "top": field_height / 2 - offset_h + id.top
+							    });
+					}
+				})
+			}
+
+			$("body").mousemove(function(e) {
+				picMove(e.pageX, e.pageY);
+			});
+		})
+	</script>
+</body>
+</html>
