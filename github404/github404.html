@@ -54,7 +54,6 @@
 		}
 
 	</style>
-	<script src="jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -72,7 +71,7 @@
 		</div>
 	</div>
 	<script>
-		$(function() {
+		window.onload = function() {
 			var window_width, window_height, 
 				field_width, field_height, 
 				rate_w, rate_h, 
@@ -89,7 +88,7 @@
 			rate_h = field_height / window_height;
 
 			var imgArray = {
-				bg : { left: -780, top: -200 ,scale: 0.06, isFont: false },
+				bg : { left: -690, top: -200 ,scale: 0.06, isFont: false },
 				text : { left: -500, top: -120, scale: 0.03, isFont: true },	
 				cat : { left: -200, top: -100 ,scale: 0.02, isFont: true },
 				cat_shadow : { left: -189, top: 100 ,scale: 0.02, isFont: true },
@@ -100,43 +99,39 @@
 			};
 
 			(function() {
-				$.each( imgArray, function( i, id ) {
-					var $img = $(".img_" + i);
-					var offset_w = rate_w * window_width / 2 * id.scale;
-					var offset_h = rate_h * window_height / 2 * id.scale;
-					if( id.isFont == true ) {
-						$img.css({ "left": field_width / 2 + offset_w + id.left, 
-								   "top": field_height / 2 + offset_h + id.top
-								});
+				for( i in imgArray ) {
+					var theImg = document.getElementsByClassName("img_" + i)[0];
+					var offset_w = rate_w * window_width / 2 * imgArray[i].scale;
+					var offset_h = rate_h * window_height / 2 * imgArray[i].scale;
+					if( imgArray[i].isFont == true ) {
+						theImg.style.left = field_width / 2 + offset_w + imgArray[i].left + "px";
+						theImg.style.top = field_height / 2 + offset_h + imgArray[i].top + "px";
 					} else {
-						$img.css({ "left": field_width / 2 - offset_w + id.left, 
-								   "top": field_height / 2 - offset_h + id.top
-							    });
+						theImg.style.left = field_width / 2 - offset_w + imgArray[i].left + "px";
+						theImg.style.top = field_height / 2 - offset_h + imgArray[i].top + "px";
 					}
-				})
+				}
 			})();
 
 			var picMove = function(pageX, pageY) {
-				$.each( imgArray, function( i, id ) {
-					var $img = $(".img_" + i);
-					var offset_w = rate_w * pageX * id.scale;
-					var offset_h = rate_h * pageY * id.scale;
-					if( id.isFont == true ) {
-						$img.css({ "left": field_width / 2 + offset_w + id.left, 
-								   "top": field_height / 2 + offset_h + id.top
-								});
+				for( i in imgArray ) {
+					var theImg = document.getElementsByClassName("img_" + i)[0];
+					var offset_w = rate_w * pageX * imgArray[i].scale;
+					var offset_h = rate_h * pageY * imgArray[i].scale;
+					if( imgArray[i].isFont == true ) {
+						theImg.style.left = field_width / 2 + offset_w + imgArray[i].left + "px";
+						theImg.style.top = field_height / 2 + offset_h + imgArray[i].top + "px";
 					} else {
-						$img.css({ "left": field_width / 2 - offset_w + id.left, 
-								   "top": field_height / 2 - offset_h + id.top
-							    });
+						theImg.style.left = field_width / 2 - offset_w + imgArray[i].left + "px";
+						theImg.style.top = field_height / 2 - offset_h + imgArray[i].top + "px";
 					}
-				})
+				}
 			}
 
-			$("body").mousemove(function(e) {
+			document.body.onmousemove = function(e) {
 				picMove(e.pageX, e.pageY);
-			});
-		})
+			};
+		}
 	</script>
 </body>
 </html>
