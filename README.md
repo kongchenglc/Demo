@@ -18,7 +18,7 @@
 
 - [clock.html](https://github.com/kongchenglc/Demo/blob/master/clock.html)
 
-&emsp;&emsp;`h5``canvas`实现，一个读取系统时间的钟表。
+&emsp;&emsp;由`h5 canvas`实现，一个读取系统时间的钟表。
 
 - [css3 printf.html](https://github.com/kongchenglc/Demo/blob/master/css3%20printf.html)
 
