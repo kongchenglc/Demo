@@ -117,11 +117,13 @@ a:hover {
     }
 
 .top-menu-open {
-    display: block;
+    overflow: hidden;
+    display: none;
 }
 .top-menu-close {
     display: none;
 }
+
 
 
 /*main*/
@@ -183,7 +185,7 @@ a:hover {
         top: 6rem;
         right: 0;
         background-color: #2C3038;
-        overflow: auto;
+        overflow: hidden;
         display: none;
     }
     .top-menu-close {
