@@ -21,7 +21,7 @@
 			position: absolute;
 			top: -11px;
 			left: -20px;
-			width: 110%;
+			width: 120%;
 			height: 425px;
 		}
 		.img_text {
@@ -101,8 +101,9 @@
 			(function() {
 				for( i in imgArray ) {
 					var theImg = document.getElementsByClassName("img_" + i)[0];
-					var offset_w = rate_w * window_width / 2 * imgArray[i].scale;
-					var offset_h = rate_h * window_height / 2 * imgArray[i].scale;
+					//
+					var offset_w = field_width / 2 * imgArray[i].scale;
+					var offset_h = field_height / 2 * imgArray[i].scale;
 					if( imgArray[i].isFont == true ) {
 						theImg.style.left = field_width / 2 + offset_w + imgArray[i].left + "px";
 						theImg.style.top = field_height / 2 + offset_h + imgArray[i].top + "px";
