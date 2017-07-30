@@ -28,6 +28,10 @@
 
 &emsp;&emsp;`css3`以及`flex`布局配合画骰子。
 
+-[drag.html](https://github.com/kongchenglc/Demo/blob/master/drag.html)
+
+&emsp;&emsp;原生`js`实现鼠标拖动`div`。
+
 - [snake.html](https://github.com/kongchenglc/Demo/blob/master/snake.html)
 
 &emsp;&emsp;`20`行代码的贪吃蛇，`canvas`实现，[这里附有详细解析](https://kongchenglc.github.io/blog/%E8%B4%AA%E5%90%83%E8%9B%8720170613/)。
