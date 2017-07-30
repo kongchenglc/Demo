@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标拖动</title>
+	<style type="text/css">
+	    #box {
+	    	position: absolute;
+	    	left:200px;
+	    	top:200px;
+	    	width: 200px;
+	    	border:1px solid #333;
+	    	height: 200px;
+	    	background-color: #009cc9;
+	    	text-align: center;
+	    	-webkit-user-select: none;  /* Chrome all / Safari all /opera15+*/  
+			-moz-user-select: none;     /* Firefox all */  
+			-ms-user-select: none;      /* IE 10+ */  
+			user-select: none;  
+	    }
+	</style>
+</head>
+<body>
+	<div class="wrap">
+        <div id="box" style="left:200px;top:200px;" onselectstart="return false;"> box </div>
+    </div>
+    <script>
+    	var o,X,Y;
+    	document.getElementById('box').onmousedown = function(e) {
+    		o = this;
+    		e = e || event;
+    		X = e.clientX - parseInt(o.style.left);
+    		Y = e.clientY - parseInt(o.style.top);
+    	}
+    	document.onmousemove = function(e) {
+    		if(!o) {
+    			return;
+    		}
+    		e = e || event;
+    		o.style.left = e.clientX - X + "px";
+    		o.style.top = e.clientY - Y + "px";
+    	}
+    	document.onmouseup = function() {
+    		o = "";
+    	}
+    </script>
+</body>
+</html>
