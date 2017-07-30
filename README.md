@@ -28,7 +28,7 @@
 
 &emsp;&emsp;`css3`以及`flex`布局配合画骰子。
 
--[drag.html](https://github.com/kongchenglc/Demo/blob/master/drag.html)
+- [drag.html](https://github.com/kongchenglc/Demo/blob/master/drag.html)
 
 &emsp;&emsp;原生`js`实现鼠标拖动`div`。
 
