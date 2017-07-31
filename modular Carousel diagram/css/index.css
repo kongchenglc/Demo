@@ -1,0 +1,74 @@
+#carousel {
+    position: relative;
+    margin: 20px auto;
+    width: 1000px;
+    height: 625px;
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: 0;
+    transition: left 1s ease-in-out;
+}
+
+#pre, 
+#next {
+    position: absolute;
+    top: 260px;
+    width: 50px;
+    height: 100px;
+    color: white;
+    opacity: .8;
+    text-align: center;
+    line-height: 100px;
+    z-index: 1;
+    cursor: pointer;
+}
+#pre {
+    left: 50px;
+}
+
+#next {
+    right: 50px;
+
+}
+
+#page {
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    color: white;
+    text-align: center;
+    opacity: .8;
+    z-index: 1;
+}
+
+.pagination {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: white;
+    opacity: .6;
+    border-radius: 50%;
+}
+
+#active {
+    opacity: 1;
+}
+
+
+
+.img-item {
+    float: left;
+    height: 100%;
+}
+
+img {
+    height: 100%;
+}
