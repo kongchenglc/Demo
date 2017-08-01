@@ -12,6 +12,10 @@
 
 &emsp;&emsp;`css3`实现导航条`3d`特效。  
 
+- [modular Carousel diagram](https://github.com/kongchenglc/Demo/tree/master/modular%20Carousel%20diagram)
+
+&emsp;&emsp;原生`js`实现简单轮播图的组件化，可在同一页面多次使用。
+
 - [border-transition.html](https://github.com/kongchenglc/Demo/blob/master/border-transition.html)
 
 &emsp;&emsp;边框动画特效，`css3`实现。
