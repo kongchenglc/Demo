@@ -1,0 +1,15 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+#carousel {
+    width: 600px;
+    height: 400px;
+    float: left;
+}
+
+#other {
+    width: 500px;
+    height: 325px;
+    float: left;
+}

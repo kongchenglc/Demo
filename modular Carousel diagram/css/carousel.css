@@ -1,0 +1,65 @@
+[id$=_container] {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: 0;
+    transition: left 1s ease-in-out;
+}
+
+[id$=_pre], 
+[id$=_next] {
+    position: absolute;
+    top: 40%;
+    width: 5%;
+    height: 20%;
+    color: white;
+    opacity: .8;
+    text-align: center;
+    line-height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+[id$=_pre] {
+    left: 5%;
+}
+
+[id$=_next] {
+    right: 5%;
+}
+
+[id$=_page] {
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    margin: 2% 0;
+    color: white;
+    text-align: center;
+    opacity: .8;
+    z-index: 1;
+}
+
+[class$=pagination] {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: white;
+    opacity: .6;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+[id$=_active] {
+    opacity: 1;
+}
+
+[class$=_img-item] {
+    float: left;
+    height: 100%;
+}
+
+[class$=_img-item] img {
+    width: 100%;
+    height: 100%;
+}
