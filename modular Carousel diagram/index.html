@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>轮播图</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/user-index.css">
 </head>
+
 <body>
-    <div id="carousel">
-
-
-    </div>
-    <script src="js/index.js"></script>
+    <div id="carousel"></div>
+    <div id="other"></div>
+    <script src="js/carousel.js"></script>
     <script>
-        var carousel = new Carousel(
-            {
-                wrap: document.getElementById("carousel"),
-                urlArr: ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg"]
-            }
-        );
+        var carousel = new Carousel({
+            wrap: document.getElementById("carousel"),
+            urlArr: ["img/1.jpg", "img/2.jpg", "img/3.jpg", "img/4.jpg", "img/5.jpg", "img/6.jpg"]
+        });
+        var other = new Carousel({
+            wrap: document.getElementById("other"),
+            urlArr: ["http://pic.58pic.com/58pic/15/13/46/96w58PICQY4_1024.jpg", "img/1.jpg", "img/2.jpg", "img/3.jpg"]
+        });
     </script>
 </body>
+
 </html>
