@@ -6,7 +6,7 @@
 
 - [github404](https://github.com/kongchenglc/Demo/tree/master/github404)
 
-&emsp;&emsp;仿**`github404`**页面**动画**特效，原生`js`实现。[这里附有解析](https://kongchenglc.github.io/blog/github40420170720/)。    
+&emsp;&emsp;仿`**github404**`页面**动画**特效，原生`js`实现。[这里附有解析](https://kongchenglc.github.io/blog/github40420170720/)。    
 
 - [menu](https://github.com/kongchenglc/Demo/tree/master/menu)
 
@@ -14,7 +14,7 @@
 
 - [modular Carousel diagram](https://github.com/kongchenglc/Demo/tree/master/modular%20Carousel%20diagram)
 
-&emsp;&emsp;原生`js`实现简单**轮播图**的组件化，可在同一页面多次使用。
+&emsp;&emsp;原生`js`实现简单**轮播图**的组件化，可在同一页面多次使用。[这里附有解析](https://kongchenglc.github.io/blog/%E8%BD%AE%E6%92%AD%E5%9B%BE20170801/)
 
 - [border-transition.html](https://github.com/kongchenglc/Demo/blob/master/border-transition.html)
 
