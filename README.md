@@ -6,7 +6,7 @@
 
 - [github404](https://github.com/kongchenglc/Demo/tree/master/github404)
 
-&emsp;&emsp;仿`github404`页面动画特效，原生`js`实现。[这里附有讲解](https://kongchenglc.github.io/blog/github40420170720/)。    
+&emsp;&emsp;仿`github404`页面动画特效，原生`js`实现。[这里附有解析](https://kongchenglc.github.io/blog/github40420170720/)。    
 
 - [menu](https://github.com/kongchenglc/Demo/tree/master/menu)
 
