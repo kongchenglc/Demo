@@ -3,13 +3,13 @@ body, html {
     margin: 0;
 }
 #carousel {
-     width: 600px; 
+    width: 100%; 
     height: 400px;
-    float: left;
+    float: left; 
 }
 
 #other {
     width: 500px;
     height: 325px;
-    float: left;
+    float: left; 
 }

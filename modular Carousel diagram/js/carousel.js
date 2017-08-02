@@ -20,17 +20,17 @@ Carousel.prototype = {
             container.innerHTML += '<div class="' + this.wrapId + '_img-item"><img src="' + value + '"></div>';
             page.innerHTML += '<li class="' + this.wrapId + '_pagination"></li>';
         }
-        for (let value of document.getElementsByClassName(this.wrapId + "_img-item")) {
-            value.style.width = this.wrapWidth + "px";
-        }
-        container.style.width = this.wrapWidth * this.imgNumber + "px";
+        container.style.width = this.imgNumber + "00%";
         container.style.left = 0;
+        for (let value of document.getElementsByClassName(this.wrapId + "_img-item")) {
+            value.style.width = 100 / this.imgNumber + "%";
+        }
         document.getElementsByClassName(this.wrapId + "_pagination")[this.activePage].id = this.wrapId + "_active";        
         this.pageActiveColor();
         this.setTime();
         this.bindEvent();
     },
-    pageActiveColor: function() {           //绘制圆点色彩
+    pageActiveColor: function() {           //绘制圆点
         document.getElementById(this.wrapId + "_active").id = "";
         document.getElementsByClassName(this.wrapId + "_pagination")[this.activePage].id = this.wrapId + "_active";
     },
@@ -55,7 +55,7 @@ Carousel.prototype = {
         } else {
             this.activePage--;
         }
-        container.style.left = "-" + this.wrapWidth * this.activePage + "px";
+        container.style.left = "-" + this.activePage + "00%";
         this.pageActiveColor();
     },
     rightAngleclick: function() {      
@@ -65,13 +65,13 @@ Carousel.prototype = {
         } else {
             this.activePage++;
         }
-        container.style.left = "-" + this.wrapWidth * this.activePage + "px";
+        container.style.left = "-" + this.activePage + "00%";
         this.pageActiveColor();
     },
     selectPage: function(selectNum) {       //点击圆点定位到指定图片
         this.activePage = selectNum;
         let container = document.getElementById(this.wrapId + "_container");
-        container.style.left = "-" + this.wrapWidth * this.activePage + "px";
+        container.style.left = "-" + this.activePage + "00%";
         this.pageActiveColor();
     },
     setTime: function() {                   //自动播放
