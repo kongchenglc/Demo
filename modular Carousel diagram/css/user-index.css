@@ -3,7 +3,7 @@ body, html {
     margin: 0;
 }
 #carousel {
-    width: 600px;
+     width: 600px; 
     height: 400px;
     float: left;
 }

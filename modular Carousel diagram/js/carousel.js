@@ -1,5 +1,5 @@
 function Carousel(obj) {
-    this.wrap = obj.wrap || document.body;  //容错性
+    this.wrap = obj.wrap;
     this.wrapId = obj.wrap.id;              //容器的id
     this.wrapWidth = this.wrap.offsetWidth; //容器宽
     this.activePage = 0;                    //轮播图当前页
