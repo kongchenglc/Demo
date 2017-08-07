@@ -1,0 +1,1 @@
+仿`github404`页面**动画**特效，原生`js`实现。[这里附有解析](https://kongchenglc.github.io/blog/github40420170720/)。
