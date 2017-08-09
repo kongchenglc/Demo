@@ -16,6 +16,10 @@
 
 &emsp;&emsp;原生`js`实现简单**轮播图**的组件化，可在同一页面多次使用。[这里附有解析](https://kongchenglc.github.io/blog/%E8%BD%AE%E6%92%AD%E5%9B%BE20170801/)
 
+-[Throttle and debounce.html](https://github.com/kongchenglc/Demo/blob/master/Throttle%20and%20debounce.html)
+
+&emsp;&emsp;**防抖**和**节流**。
+
 - [border-transition.html](https://github.com/kongchenglc/Demo/blob/master/border-transition.html)
 
 &emsp;&emsp;**边框动画**特效，`css3`实现。
