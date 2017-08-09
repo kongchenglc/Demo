@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>节流与防抖</title>
+	<style>
+		body {
+			min-height: 3000px;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<p>初始化</p>
+	</div>
+	
+	<!-- <script>				//节流
+		var count = 0,
+			main = document.getElementById('main');
+
+		var scrollFun =  function(time) { 
+			var canRun = true;
+			return function() {
+				if(canRun) {
+					canRun = false;
+					setTimeout(() => {
+						main.innerHTML += "<p>第" + ++count + "行</p>";
+						console.log("发生了!");
+						canRun = true;
+					}, time); 
+				}
+			};
+		}
+
+		window.onscroll = scrollFun(300);
+	</script> -->
+
+
+	<script>				//防抖
+		var count = 0,
+			main = document.getElementById('main');
+
+		var debounce = function(time) {
+			var setTimeId = null;
+
+			return function() {
+				clearTimeout(setTimeId);
+				setTimeId = setTimeout(() => {
+					main.innerHTML += "<p>第" + ++count + "行</p>";
+					console.log("发生了!");
+				}, time);	
+			}
+		}
+
+		window.onscroll = debounce(30);
+	</script>
+</body>
+</html>
