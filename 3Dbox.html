@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3Dbox</title>
+	<style>
+		  body, html{
+        height: 100%;
+    		padding: 0;
+    		margin: 0;
+    		box-sizing: border-box;
+        overflow: hidden;
+    	}
+		.wraper {
+			width: 260px;
+			height: 260px;
+			margin: 128px auto;
+			perspective: 1000px;
+       	}
+       	.cube {
+       		height: 100%;
+       		width: 100%;
+       		position: relative;
+       		transform-style: preserve-3d;
+       		/*transform: rotateX(-30deg) rotateY(-45deg);*/
+       		animation: spin 5s ease-in-out;
+       	}
+       	@keyframes spin {
+       		from {
+       			transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+       		}
+       		to {
+       			transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+       		}
+       	}
+       	.cube > div {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(0,0,0,.8);
+			text-align: center;
+			line-height: 260px;
+    		color: #fff;
+    		font-size: 48px;
+    		border: 2px solid #fff;
+    		user-select: none;
+       	}
+       	.out-front {
+       		transform: translateZ(130px);
+       	}
+       	.out-end {
+       		transform: translateZ(-130px);
+       	}
+       	.out-top {
+       		transform: rotateX(90deg) translateZ(130px) ;
+       	}
+       	.out-bottom {
+       		transform: rotateX(90deg) translateZ(-130px);
+       	}
+       	.out-left {
+       		transform: rotateY(90deg) translateZ(-130px);
+       	}
+       	.out-right {
+       		transform: rotateY(90deg) translateZ(130px);
+       	}
+	</style>
+</head>
+<body>
+	<div class="wraper">
+		<div class="cube">
+			<div class="out-front">Front</div>
+			<div class="out-end">End</div>
+			<div class="out-left">Left</div>
+			<div class="out-right">Right</div>
+			<div class="out-top">Top</div>
+			<div class="out-bottom">Bottom</div>
+		</div>
+	</div>
+  <script>
+
+    window.onload = function() {
+      var cube = document.querySelector(".cube"),
+          downX, downY, moveX, moveY, tmpX, tmpY, degX = 0, degY = 0;
+ 
+      window.onmousedown = function(e) {
+        e = e || event;
+        downX = e.clientX;
+        downY = e.clientY;
+        console.log('can');
+
+        window.onmousemove = function(e) {
+          e = e || event;
+          moveX = e.clientX - downX;
+          moveY = e.clientY - downY;
+          tmpX = degX + moveX / 5;
+          tmpY = degY - moveY / 5;
+          cube.style.transform = "rotatex(" + tmpY + "deg) rotatey(" + tmpX + "deg)";
+        };
+
+      };
+
+      window.onmouseup = function(e) {
+        e = e || event;
+        degX += moveX / 5;
+        degY += - moveY /5;
+        window.onmousemove = null;
+      };
+
+      !function() {
+        var n = 1000;
+        var wraper = document.querySelector('.wraper');
+        wraper.style.perspective = n + 'px';
+        window.onmousewheel = function(e) {
+          e = e || event;
+          if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件               
+              if (e.wheelDelta > 0) { //当滑轮向上滚动时  
+                  wraper.style.perspective = n - 50 + 'px';  
+                  if (n >= 350) {
+                    n = n - 50; 
+                  }
+              }  
+              if (e.wheelDelta < 0) { //当滑轮向下滚动时  
+                wraper.style.perspective = n + 50 + 'px';  
+                n += 50;
+              }  
+          } else if (e.detail) {  //Firefox滑轮事件  
+              if (e.detail> 0) { //当滑轮向上滚动时  
+                  alert("滑轮向上滚动");  
+              }  
+              if (e.detail< 0) { //当滑轮向下滚动时  
+                  alert("滑轮向下滚动");  
+              }  
+          }  
+        };
+      }();
+
+    }; 
+  </script>
+</body>
+</html>
