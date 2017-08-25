@@ -17,7 +17,7 @@
 
 - [3Dbox.html](https://github.com/kongchenglc/Demo/blob/master/3Dbox.html)
 
-&emsp;&emsp;`css3 + js`实现*`3D`盒子*，可用滚轮及拖拽调整视角  
+&emsp;&emsp;`css3 + js`实现**3D盒子**，可用滚轮及拖拽调整视角  
 
 - [Throttle and debounce.html](https://github.com/kongchenglc/Demo/blob/master/Throttle%20and%20debounce.html)
 
