@@ -129,7 +129,7 @@
 					if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
 						if (e.wheelDelta > 0) { //当滑轮向上滚动时减小景深
 							wraper.style.perspective = n - 50 + 'px';
-							if (n >= 350) {
+							if (n > 350) {
 								n = n - 50;
 							}
 						}
@@ -140,7 +140,7 @@
 					} else if (e.detail) {  //Firefox滑轮事件
 						if (e.detail > 0) {
 							wraper.style.perspective = n - 50 + 'px';
-							if (n >= 350) {
+							if (n > 350) {
 								n = n - 50;
 							}
 						}
