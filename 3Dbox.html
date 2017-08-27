@@ -93,7 +93,7 @@
 	<script>
 		setTimeout(function () {
 			var cube = document.querySelector(".cube"),
-				downX, downY, moveX, moveY, tmpX, tmpY, degX = 0, degY = 0;
+				downX, downY, moveX, moveY, tempX, tempY, degX = 0, degY = 0;
 
 			window.onmousedown = function (e) {
 				e = e || event;
@@ -105,9 +105,9 @@
 					e = e || event;
 					moveX = e.clientX - downX;
 					moveY = e.clientY - downY;
-					tmpX = degX + moveX / 5;
-					tmpY = degY - moveY / 5;
-					cube.style.transform = "rotatex(" + tmpY + "deg) rotatey(" + tmpX + "deg)";
+					tempX = degX + moveX / 5;
+					tempY = degY - moveY / 5;
+					cube.style.transform = "rotatex(" + tempY + "deg) rotatey(" + tempX + "deg)";
 				};
 
 			};
