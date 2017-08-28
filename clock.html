@@ -81,8 +81,8 @@
                 var jTime = {};
                 var iNow = new Date();
                 jTime.sec = -90 + iNow.getSeconds()*6;
-                jTime.min = -90 + iNow.getMinutes()*6 + jTime.sec/60;
-                jTime.hour = -90 + iNow.getHours()*30 + jTime.min/60;
+                jTime.min = -90 + iNow.getMinutes()*6 + iNow.getSeconds()/20;
+                jTime.hour = -90 + iNow.getHours()*30 + iNow.getMinutes()/2;
 
                 return jTime;
             }
