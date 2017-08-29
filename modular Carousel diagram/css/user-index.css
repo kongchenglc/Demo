@@ -3,8 +3,8 @@ body, html {
     margin: 0;
 }
 #carousel {
-    width: 100%; 
-    height: 400px;
+    width: 960px; 
+    height: 600px;
     float: left; 
 }
 
