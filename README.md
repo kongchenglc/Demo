@@ -1,6 +1,6 @@
 # 前端的一些demo
 
-由于用到了`rawgit`效果预览需要翻墙。
+由于用到了`rawgit`，效果预览的网页需要翻墙。
 
 - [Response layouts](https://github.com/kongchenglc/Demo/tree/master/Response%20layouts)   
 
