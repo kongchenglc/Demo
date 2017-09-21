@@ -4,7 +4,7 @@
 
 - [Frame animation](https://github.com/kongchenglc/Demo/blob/master/Frame%20animation/pomo.html)
 
-&emsp;&emsp;`css3`实现**导航条**`3d`特效。[效果预览](https://rawgit.com/kongchenglc/Demo/master/Frame%20animation/pomo.html)。
+&emsp;&emsp;`css3`**帧动画**实现泼墨特效。[效果预览](https://rawgit.com/kongchenglc/Demo/master/Frame%20animation/pomo.html)。
 
 - [github404](https://github.com/kongchenglc/Demo/tree/master/github404)
 
