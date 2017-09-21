@@ -29,7 +29,7 @@
 			letter-spacing: .15em;
 		    font-weight: 700;
 			box-shadow:0 2px 10px rgba(0,0,0,0.08);
-			cursor: pointer;
+			text-decoration-line: none;
 		}
 		.transition-layer {
 			height: 100vh;
@@ -51,6 +51,10 @@
 			visibility: visible;
 			animation: Expand .8s steps(24);   
 			animation-fill-mode:forwards;
+		}
+		.disappear {
+			transition: visibility 0s .8s;
+			animation: Narrow .8s steps(24);
 		}
 
 		@keyframes Expand {
@@ -84,6 +88,7 @@
 			background-size: cover;
 			text-align: center;
 			overflow-y: auto;
+		    transition: opacity .4s, visibility 0s .4s;
 		}
 		.modal .inner {
 			position: absolute;
@@ -100,40 +105,60 @@
 		.inner p {
 			max-width: 800px;
 			margin: 50px auto;
+			padding: 0 50px;
 		}
 		.display {
 			opacity: 1;
 			visibility: visible;
-		    transition: opacity 0.7s .7s, visibility 0s .7s;
+		    transition: opacity .7s .7s, visibility 0s .7s;
+		}
+		.close {
+			z-index: 1;
+			position: fixed;
+			top: 20px;
+			right: 5%;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: url(cd-icon-close.svg) no-repeat center center;
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+		.close:hover {
+			background-color: rgba(0, 0, 0, 1);
 		}
 
 	</style>
 </head>
 <body>
-	<div id="btn">点我试试</div>
+	<a href="javascript:void(0)" id="btn">点我试试</a>
 	<div class="transition-layer">
 		<div class="layer"></div>
 	</div>
 	<div class="modal">
+		<a href="javascript:void(0)" class="close"></a>
 		<div class="inner">
 			<h1>My Modal Content</h1>
-			
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
 			</p>
-
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis saepe amet sit fugit rerum, corporis minus vitae officia quaerat incidunt voluptate, blanditiis ea est quibusdam voluptas animi quasi totam magni, commodi praesentium. Possimus quam illo ipsam iste unde totam cupiditate deleniti, impedit assumenda hic eligendi natus tempora dolores quod mollitia ab non sunt eaque adipisci, suscipit quas aliquid officiis beatae. Necessitatibus voluptatibus, perferendis tenetur perspiciatis adipisci nesciunt eum ex fuga commodi iure numquam enim rem ullam labore nisi magni sint voluptatem quos! Eum iure exercitationem voluptates repellendus culpa doloremque laborum animi illum, sint fugit soluta possimus a fuga veritatis molestias corporis placeat illo pariatur dolor reiciendis earum, sapiente omnis. Placeat maiores omnis, porro officia, laborum eos. Fugiat mollitia inventore consequuntur odit eaque, rerum recusandae, eum sint molestiae consequatur culpa deserunt quae aliquid dolor tempora tenetur architecto repellendus enim quasi atque, odio voluptas. Tenetur repellendus explicabo ipsum inventore quia aut eos expedita necessitatibus asperiores blanditiis! Delectus nisi laudantium ipsum! Quasi blanditiis corrupti dicta maiores placeat laboriosam delectus ipsum facere voluptas, magnam voluptatibus, perferendis alias ullam saepe, perspiciatis recusandae voluptates, dolores praesentium?
 			</p>
 		</div>
 	</div>
 	<script>
-		document.getElementById('btn').onclick = function (event) {
+		let modal = document.getElementsByClassName('modal')[0];
+		let layer = document.querySelector('.layer');
+		document.getElementById('btn').onclick = function(event) {
 			event = event || window.event;
-			document.querySelector('.layer').className = 'layer active';
-			document.getElementsByClassName('modal')[0].className = 'modal display';
+			layer.className = 'layer active';
+			modal.className = 'modal display';
 		}
-
+		modal.querySelector('.close').onclick = function(event) {
+			event = event || window.event;
+			layer.className = 'layer disappear';
+			modal.className = 'modal';
+		}
 	</script>
 </body>
 </html>
