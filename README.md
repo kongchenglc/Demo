@@ -2,9 +2,14 @@
 
 由于用到了`rawgit`，效果预览的网页**可能需要翻墙**。      
 
+- [Frame animation](https://github.com/kongchenglc/Demo/blob/master/Frame%20animation/pomo.html)
+
+&emsp;&emsp;`css3`实现**导航条**`3d`特效。[效果预览](https://rawgit.com/kongchenglc/Demo/master/Frame%20animation/pomo.html)。
+
 - [github404](https://github.com/kongchenglc/Demo/tree/master/github404)
 
-&emsp;&emsp;仿`github404`页面**动画**特效，原生`js`实现。[效果预览](https://rawgit.com/kongchenglc/Demo/master/github404/github404.html)。[博客详解](https://kongchenglc.github.io/blog/github40420170720/)。    
+&emsp;&emsp;仿`github404`页面**动画**特效，原生`js`实现。[效果预览](https://rawgit.com/kongchenglc/Demo/master/github404/github404.html)。[博客详解](https://kongchenglc.github.io/blog/github40420170720/)。  
+
 - [menu](https://github.com/kongchenglc/Demo/tree/master/menu)
 
 &emsp;&emsp;`css3`实现**导航条**`3d`特效。[效果预览](https://rawgit.com/kongchenglc/Demo/master/menu/css3-menu.html)。  
@@ -51,4 +56,4 @@
 
 - [waterfull.html](https://github.com/kongchenglc/Demo/blob/master/waterfull.html)
 
-&emsp;&emsp;**瀑布流**布局，监听滚动事件实现懒加载。[效果预览](https://rawgit.com/kongchenglc/Demo/master/waterfull.html)。
+&emsp;&emsp;**瀑布流**布局，监听滚动事件实现**懒加载**。[效果预览](https://rawgit.com/kongchenglc/Demo/master/waterfull.html)。
