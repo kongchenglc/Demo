@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box" style="width: 500px;height: 500px;position: relative;overflow: hidden;background: #ccc;">
+		<div id="ball" style="width: 10px;height: 10px;border-radius: 5px;position: absolute;background: red;"></div>
+	</div>
+	<script>
+		function fun(v) {
+			let Vx = Math.random()*v;
+			let Vy = Math.sqrt(v*v - Vx*Vx);
+			let startX = Math.random()*500;
+			let startY = Math.random()*500;
+			const ball = document.getElementById('ball');
+			ball.style.left = startX + 'px';
+			ball.style.top = startY + 'px';
+			function animate(){
+				if(startX >= 490 || startX <= 10)
+					Vx = -Vx;
+				startX += Vx;
+				if(startY >= 490 || startY <= 10) 
+					Vy = -Vy;
+				startY += Vy;
+				ball.style.left = startX + 'px';
+				ball.style.top = startY + 'px';
+				window.requestAnimationFrame(animate);
+			}
+			window.requestAnimationFrame(animate);
+		}
+		fun(5);
+	</script>
+</body>
+</html>
