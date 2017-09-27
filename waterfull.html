@@ -67,19 +67,20 @@
 		var boxes = document.getElementsByClassName('box');
 		var box_width = document.getElementsByClassName('box')[0].offsetWidth;
 		var w_width = document.body.clientWidth;
-		var column = Math.floor(w_width/box_width);
+		var column = Math.floor(w_width/box_width);							//计算得到图片列数
 		document.getElementById('container').style.width = column * box_width + "px";
 		var heightArr = [];
 		for(var i = 0; i < boxes.length; i++ ) {
 			if(i < column) {
-				heightArr.push(boxes[i].offsetHeight);
+				boxes[i].style.position = null;
+				heightArr.push(boxes[i].offsetHeight);						//前列数张图片放入高度数组，也不设置布局
 			} else {
-				var min_height = Math.min.apply(Math,heightArr);
-				var min_height_index = heightArr.indexOf(min_height);
+				var min_height = Math.min.apply(Math,heightArr);			//求得最小高度
+				var min_height_index = heightArr.indexOf(min_height);		//求高度最小的列的列号
 				boxes[i].style.position = "absolute";
 				boxes[i].style.top = min_height + "px";
 				boxes[i].style.left = boxes[min_height_index].offsetLeft + "px";
-				heightArr[min_height_index] += boxes[i].offsetHeight;
+				heightArr[min_height_index] += boxes[i].offsetHeight;		//下一张图片布局到此列且加上高度
 			}
 			boxes[i].className = "box boxDisplay";
 		}
@@ -103,16 +104,17 @@
 				}
 				newPic.appendChild(newImg);
 				imgsNumber++;
-				setTimeout(waterFull, 200);
+				setTimeout(waterFull, 200);			//每次加载重新执行waterFull
 			}
 		}
 	}
 
 	function check_onload() {
 		var boxes = document.getElementsByClassName("box");
-		var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
-		var clientHeight = document.documentElement.clientHeight||document.body.clientHeight;
-		var lastBoxOffsetTop = boxes[boxes.length-1].offsetTop + boxes[boxes.length-1].offsetHeight / 2;
+		var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;       //页面圈走的高度
+		var clientHeight = document.documentElement.clientHeight||document.body.clientHeight;	//客户端窗口高度
+		var lastBoxOffsetTop = boxes[boxes.length-1].offsetTop + boxes[boxes.length-1].offsetHeight / 2;	
+			//最后一个盒子设置的top的距离 + 盒子高度的一半
 		return (lastBoxOffsetTop < scrollTop + clientHeight) ? true : false ;
 	}
 
