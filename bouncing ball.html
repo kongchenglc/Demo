@@ -18,10 +18,10 @@
 			ball.style.left = startX + 'px';
 			ball.style.top = startY + 'px';
 			function animate(){
-				if(startX >= 490 || startX <= 10)
+				if(startX >= 490 || startX <= 0)
 					Vx = -Vx;
 				startX += Vx;
-				if(startY >= 490 || startY <= 10) 
+				if(startY >= 490 || startY <= 0) 
 					Vy = -Vy;
 				startY += Vy;
 				ball.style.left = startX + 'px';
