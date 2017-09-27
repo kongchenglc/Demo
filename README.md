@@ -30,6 +30,10 @@
 
 &emsp;&emsp;**边框动画**特效，`css3`实现。[效果预览](https://rawgit.com/kongchenglc/Demo/master/border-transition.html)。
 
+- [bouncing ball.html](https://github.com/kongchenglc/Demo/blob/master/bouncing%20ball.html)
+
+&emsp;&emsp;确定速度不确定方向的**弹射**小球。[效果预览](https://rawgit.com/kongchenglc/Demo/master/bouncing%20ball.html)。
+
 - [clock.html](https://github.com/kongchenglc/Demo/blob/master/clock.html)
 
 &emsp;&emsp;由`h5 canvas`实现，一个读取系统时间的**钟表**。[效果预览](https://rawgit.com/kongchenglc/Demo/master/clock.html)。
