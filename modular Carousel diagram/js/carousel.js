@@ -43,8 +43,8 @@ Carousel.prototype = {
             pages[key].addEventListener("click", this.selectPage.bind(this, key));
             console.log(key);
         }
-        this.wrap.addEventListener("mouseover", this.clearTime.bind(this));
-        this.wrap.addEventListener("mouseout", this.setTime.bind(this));
+        this.wrap.addEventListener("mouseenter", this.clearTime.bind(this));
+        this.wrap.addEventListener("mouseleave", this.setTime.bind(this));
         preAngle.addEventListener("click", this.leftAngleclick.bind(this));
         nextAngle.addEventListener("click", this.rightAngleclick.bind(this));
     },
