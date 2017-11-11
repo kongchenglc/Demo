@@ -30,7 +30,7 @@
 
 - [nest](https://github.com/kongchenglc/Demo/tree/master/nest)
 
-&emsp;&emsp;`Canvas`实现`Nest`线条跟随鼠标的背景特效。 
+&emsp;&emsp;`Canvas`实现`Nest`线条跟随鼠标的背景特效。[效果预览](https://kongchenglc.github.io/)。
 
 
 
