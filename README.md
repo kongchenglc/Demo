@@ -24,8 +24,8 @@
 
 
 - [particle](https://github.com/kongchenglc/Demo/tree/master/particle)
-&emsp;&emsp;`Canvas`实现图片粒子化特效。效果预览：  
-![demo](https://github.com/kongchenglc/Demo/tree/master/particle/imgs/demo.gif)
+&emsp;&emsp;`Canvas`实现图片粒子化特效。 
+![效果预览](https://github.com/kongchenglc/Demo/tree/master/particle/imgs/demo.gif)
 
 
 - [3Dbox.html](https://github.com/kongchenglc/Demo/blob/master/3Dbox.html)
