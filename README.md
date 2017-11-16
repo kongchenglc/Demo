@@ -23,12 +23,12 @@
 
 - [nest](https://github.com/kongchenglc/Demo/tree/master/nest)
 
-&emsp;&emsp;`Canvas`实现`Nest`线条跟随鼠标的背景特效。[效果预览](https://kongchenglc.github.io/)。
+&emsp;&emsp;`Canvas`实现`Nest`线条跟随鼠标的背景特效。[效果预览](https://kongchenglc.github.io/Demo/nest/myNest.html)。
 
 
 - [particle](https://github.com/kongchenglc/Demo/tree/master/particle)
 
-&emsp;&emsp;`Canvas`实现图片粒子化特效。 
+&emsp;&emsp;`Canvas`实现图片粒子化特效。  
 ![效果预览](https://github.com/kongchenglc/Demo/tree/master/particle/imgs/demo.gif)
 
 
