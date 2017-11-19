@@ -3,12 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>粒子轮播</title>
+	<style>
+		html, body{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
 </head>
 <body>
 	<canvas id="particale-canvas" width="1000px" height="500px"></canvas>
 
 	<!-- <script src="particaleTurns.js"></script> -->
 	<script>
+		//构造函数
 		function Particale({warp, imgsUrl, radius}) {
 			this.warp = warp;		//画布
 			this.ctx = warp.getContext('2d');
@@ -21,6 +30,7 @@
 			this.init();
 		}
 
+		//添加原型属性
 		Particale.prototype = {
 			constructor: Particale,
 			init: function() {
@@ -199,6 +209,7 @@
 		}
 	</script>
 	<script>
+		//初始化一个粒子轮播特效
 		const particale = new Particale({
 			warp: document.getElementById('particale-canvas'),
 			imgsUrl: ["imgs/1.jpg", "imgs/2.jpg", "imgs/3.jpg", "imgs/4.jpg", "imgs/5.jpg", "imgs/6.jpg", "imgs/7.jpg"],
