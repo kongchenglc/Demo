@@ -24,6 +24,7 @@
 
 
 			function draw() {
+				//清屏
 				ctx.clearRect(0, 0, canvas_width, canvas_height);
 				let i,pi,x_dist,y_dist,dist,w;
 
@@ -43,6 +44,7 @@
 							dist = x_dist * x_dist + y_dist * y_dist;
 							//当两点距离小于极限距离时会产生连线，当第二个点是鼠标所产生点时，第一个点在范围内会产生向鼠标点的速度，产生吸附效果
 							dist < pi.max && (pi === current_point && dist >= pi.max / 2 && (p.x -= 0.03 * x_dist, p.y -= 0.03 * y_dist));
+							//根据距离计算连线的透明度，使过度效果流畅
 							w = (pi.max - dist) / pi.max;
 							ctx.beginPath();
 							ctx.lineWidth = w / 2;
