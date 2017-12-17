@@ -34,6 +34,11 @@
 		Particale.prototype = {
 			constructor: Particale,
 			init: function() {
+				//画布大小
+				this.warp.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				this.warp.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+				document.body.style.overflow = "hidden";
+
 				//限制小球半径
 				if (this.warp.width > 500 || this.warp.height > 300)
 					this.radius >= 4 ? this.radius = this.radius : this.radius = 4;
