@@ -32,6 +32,7 @@
 				random_points.forEach((p, index) => {
 					p.x += p.xa,		//按指定速度移动
 					p.y += p.ya,
+					//小球碰撞则速度取相反数
 					p.xa *= p.x > canvas_width || p.x < 0 ? -1 : 1,
 					p.ya *= p.y > canvas_height || p.y < 0 ? -1 : 1,
 					ctx.fillRect(p.x - 0.5, p.y - 0.5, 1, 1);		//绘制点
