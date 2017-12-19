@@ -8,7 +8,7 @@
 
 - [nest](https://github.com/kongchenglc/Demo/tree/master/nest)
 
-&emsp;&emsp;`Canvas`实现`Nest`**线条跟随鼠标**的背景特效。[效果预览](https://kongchenglc.github.io/Demo/nest/myNest.html)。
+&emsp;&emsp;`Canvas`实现`Nest`**线条跟随鼠标**的背景特效。[效果预览](https://kongchenglc.github.io/Demo/nest/myNest.html)。[博客详解](https://kongchenglc.github.io/blog/canvas20171217/)
 
 
 - [modular Carousel diagram](https://github.com/kongchenglc/Demo/tree/master/modular%20Carousel%20diagram)
