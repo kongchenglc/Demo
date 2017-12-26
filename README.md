@@ -48,7 +48,7 @@
 
 - [Throttle and debounce.html](https://github.com/kongchenglc/Demo/blob/master/Throttle%20and%20debounce.html)
 
-&emsp;&emsp;**防抖**和**节流**。[效果预览](https://kongchenglc.github.io/Demo/Throttle%20and%20debounce.html)。
+&emsp;&emsp;**防抖**和**节流**。
 
 
 - [border-transition.html](https://github.com/kongchenglc/Demo/blob/master/border-transition.html)
