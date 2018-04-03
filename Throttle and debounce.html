@@ -20,6 +20,7 @@
 	</div>
 	
 	<script>				//节流	
+		//主要思想是设置一个守卫，如果settimeout已经执行过了（在等待回调了），就不会创建新的settimeout
 		var count = 0,
 			main = document.getElementById('main');
 
@@ -42,6 +43,7 @@
 
 
 	<!-- <script>				//防抖
+		//主要思想是如果频繁触发就取消上一个，重新创建一个规定时长的settimeout
 		var count = 0,
 			main = document.getElementById('main');
 
