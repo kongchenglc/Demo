@@ -41,7 +41,6 @@ Carousel.prototype = {
         let pages = pageUl.getElementsByClassName(this.wrapId + "_pagination");
         for (let key = 0; key < pages.length; key++) {
             pages[key].addEventListener("click", this.selectPage.bind(this, key));
-            console.log(key);
         }
         this.wrap.addEventListener("mouseenter", this.clearTime.bind(this));
         this.wrap.addEventListener("mouseleave", this.setTime.bind(this));
@@ -79,11 +78,9 @@ Carousel.prototype = {
         this.settimeID = setInterval(function() {
             document.getElementById(wrapId + "_next").click();
         } , 3000);
-        console.log("set");
     },
     clearTime: function() {                 //鼠标悬浮取消自动播放
         let theId = this.settimeID;             //解决this绑定丢失
-        console.log("clear");
         clearInterval(theId);        
     }
 
