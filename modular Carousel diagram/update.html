@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#carousel {
+			width: 1000px;
+			height: 500px;
+			background: #ccc;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.imgs {
+			width: 3000px;
+			height: 500px;
+			position: absolute;
+			left: 0;
+		}
+
+		.a-img-box {
+			width: 1000px;
+			height: 500px;
+			float: left;
+		}
+		.a-img-box img {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="carousel">
+		<div class="imgs">
+			<div class="a-img-box">
+				<img class="a-img" src="img/1.jpg" alt="">
+			</div>
+			<div class="a-img-box">
+				<img class="a-img" src="img/2.jpg" alt="">
+			</div>
+			<div class="a-img-box">				
+				<img class="a-img" src="img/3.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	<button onclick="preImg()">上一个</button>
+	<button onclick="nextImg()">下一个</button>
+
+	<script>
+		let imgs = document.querySelector('.imgs')
+		let offset = 0
+
+		imgs.style.left = `-${offset}px`;
+
+		function preImg() {
+			
+		}
+		function nextImg() {
+
+		}
+ 	</script>
+</body>
+</html>
