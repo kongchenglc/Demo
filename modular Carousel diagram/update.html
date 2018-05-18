@@ -13,10 +13,11 @@
 		}
 
 		.imgs {
-			width: 3000px;
+			width: 4000px;
 			height: 500px;
 			position: absolute;
 			left: 0;
+			transition: all .5s linear;
 		}
 
 		.a-img-box {
@@ -42,23 +43,43 @@
 			<div class="a-img-box">				
 				<img class="a-img" src="img/3.jpg" alt="">
 			</div>
+			<div class="a-img-box">				
+				<img class="a-img" src="img/1.jpg" alt="">
+			</div>
 		</div>
 	</div>
 	<button onclick="preImg()">上一个</button>
 	<button onclick="nextImg()">下一个</button>
 
 	<script>
+		let arr = [1,2,3,4,5,6]
+
 		let imgs = document.querySelector('.imgs')
+		let aImg = document.querySelectorAll('.a-img')
 		let offset = 0
 
-		imgs.style.left = `-${offset}px`;
+		imgs.style.left = `-${offset}px`
 
 		function preImg() {
-			
+			imgs.style.left = `-${offset}px`
+			offset -= 1000
+			console.log(offset)
 		}
 		function nextImg() {
-
+			if(offset > (aImg.length-1)*1000) {
+					offset = 0
+					imgs.style.transition = 'all 0s linear'
+					imgs.style.left = `-${offset}px`
+					imgs.offsetTop
+					offset += 1000
+					imgs.style.transition = 'all .5s linear'
+			}
+			imgs.style.left = `-${offset}px`
+			offset += 1000
+			console.log(offset)
 		}
+
+		setInterval(nextImg, 1000)
  	</script>
 </body>
 </html>
