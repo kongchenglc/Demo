@@ -13,7 +13,7 @@
 		}
 
 		.imgs {
-			width: 4000px;
+			width: 5000px;
 			height: 500px;
 			position: absolute;
 			left: 0;
@@ -34,6 +34,9 @@
 <body>
 	<div id="carousel">
 		<div class="imgs">
+			<div class="a-img-box">				
+				<img class="a-img" src="img/3.jpg" alt="">
+			</div>
 			<div class="a-img-box">
 				<img class="a-img" src="img/1.jpg" alt="">
 			</div>
@@ -56,7 +59,7 @@
 
 		let imgs = document.querySelector('.imgs')
 		let aImg = document.querySelectorAll('.a-img')
-		let offset = 0
+		let offset = 1000
 
 		imgs.style.left = `-${offset}px`
 
@@ -65,21 +68,26 @@
 			offset -= 1000
 			console.log(offset)
 		}
+
+		//加个节流，过渡完成才能再点
 		function nextImg() {
+			offset += 1000
 			if(offset > (aImg.length-1)*1000) {
-					offset = 0
+					//关掉过渡
 					imgs.style.transition = 'all 0s linear'
+					//拉到开始
+					offset = 1000
 					imgs.style.left = `-${offset}px`
-					imgs.offsetTop
-					offset += 1000
+					imgs.offsetTop		//强制重绘
+					//打开过渡
 					imgs.style.transition = 'all .5s linear'
+					offset += 1000
 			}
 			imgs.style.left = `-${offset}px`
-			offset += 1000
 			console.log(offset)
 		}
 
-		setInterval(nextImg, 1000)
+		// setInterval(nextImg, 1000)
  	</script>
 </body>
 </html>
