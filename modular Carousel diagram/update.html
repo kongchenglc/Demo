@@ -69,7 +69,7 @@
 			console.log(offset)
 		}
 
-		//加个节流，过渡完成才能再点
+		//记得加个节流，过渡完成才能再点
 		function nextImg() {
 			offset += 1000
 			if(offset > (aImg.length-1)*1000) {
@@ -84,10 +84,9 @@
 					offset += 1000
 			}
 			imgs.style.left = `-${offset}px`
-			console.log(offset)
 		}
 
-		// setInterval(nextImg, 1000)
+		setInterval(nextImg, 4000)
  	</script>
 </body>
 </html>
