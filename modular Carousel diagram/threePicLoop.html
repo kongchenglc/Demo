@@ -35,13 +35,13 @@
 	<div id="carousel">
 		<div class="imgs">
 			<div class="a-img-box">
-				<img class="left-img" src="img/1.jpg" alt="">
+				<img class="left-img" src="" alt="">
 			</div>
 			<div class="a-img-box">
-				<img class="the-img" src="img/1.jpg" alt="">
+				<img class="the-img" src="" alt="">
 			</div>
 			<div class="a-img-box">				
-				<img class="right-img" src="img/1.jpg" alt="">
+				<img class="right-img" src="" alt="">
 			</div>
 		</div>
 	</div>
@@ -53,35 +53,93 @@
 
 		let imgs = document.querySelector('.imgs')
 		let leftImg = document.querySelector('.left-img')
-		let theImg =  = document.querySelector('.the-img')
+		let theImg = document.querySelector('.the-img')
 		let rightImg = document.querySelector('.right-img')
 
+		let theIndex = 0
+		theImg.src = arr[theIndex]
+		leftImg.src = arr[arr.length - 1]
+		rightImg.src = arr[1]
 
 		let offset = 1000
-
 		imgs.style.left = `-${offset}px`
 
-		function preImg() {
-			imgs.style.left = `-${offset}px`
-			offset -= 1000
-			console.log(offset)
+		let isDone = true
+
+
+		function refresh(sign) {
+			if(sign === '+') {
+				theIndex++
+				if(theIndex === arr.length)
+					theIndex = 0
+			} else if(sign === '-') {
+				theIndex--
+				if(theIndex === -1) 
+					theIndex = arr.length - 1
+			}
+			console.log('refresh')
+			if(theIndex === 0) {
+				theImg.src = arr[theIndex]
+				leftImg.src = arr[arr.length - 1]
+				rightImg.src = arr[1]
+				return
+			}
+			if(theIndex === arr.length - 1) {
+				theImg.src = arr[theIndex]
+				leftImg.src = arr[theIndex - 1]
+				rightImg.src = arr[0]
+				return
+			}
+			theImg.src = arr[theIndex]
+			leftImg.src = arr[theIndex - 1]
+			rightImg.src = arr[theIndex + 1]
 		}
 
-		//记得加个节流，过渡完成才能再点
-		function nextImg() {
-			offset += 1000
-			if(offset > (aImg.length-1)*1000) {
+		function preImg() {
+			if(isDone === true) {
+				isDone = false
+
+				//打开过渡
+				imgs.style.transition = 'all .5s linear'
+				offset -= 1000
+				imgs.style.left = `-${offset}px`
+
+				setTimeout(() => {
+					isDone = true
+					refresh('-')
+
 					//关掉过渡
 					imgs.style.transition = 'all 0s linear'
 					//拉到开始
 					offset = 1000
 					imgs.style.left = `-${offset}px`
 					imgs.offsetTop		//强制重绘
-					//打开过渡
-					imgs.style.transition = 'all .5s linear'
-					offset += 1000
+				}, 1000)
 			}
-			imgs.style.left = `-${offset}px`
+		}
+
+		//记得加个节流，过渡完成才能再点
+		function nextImg() {
+			if(isDone === true) {
+				isDone = false
+
+				//打开过渡
+				imgs.style.transition = 'all .5s linear'
+				offset += 1000
+				imgs.style.left = `-${offset}px`
+
+				setTimeout(() => {
+					isDone = true
+					refresh('+')
+
+					//关掉过渡
+					imgs.style.transition = 'all 0s linear'
+					//拉到开始
+					offset = 1000
+					imgs.style.left = `-${offset}px`
+					imgs.offsetTop		//强制重绘
+				}, 1000)
+			}
 		}
 
 		setInterval(nextImg, 4000)
