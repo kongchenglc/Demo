@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.tap {
+		background: #ccc;
+		width: 200px;
+		height: 200px;
+		position: absolute;
+		z-index: 2;
+	}
+
+	.click {
+		width: 500px;
+		height: 500px;
+		background: red;
+		position: absolute;
+		top: 0;
+		z-index: 1;
+	}
+</style>
+</head>
+<body>
+	<div class="click">click</div>
+	<div class="tap">tap</div>
+
+	<div style="position: absolute; top: 500px;padding:100px;">
+		<p>移动端点透发生的条件：</p>
+
+		<p>
+		 1. A 和 B不是后代继承关系(如果是后代继承关系的话，就直接是冒泡子类的话题了)	
+		</p>
+		<p>
+		2. A发生touch， A touch后立即消失， B事件绑定click
+		</p>
+		<p>
+		3. A z-index大于B，即A显示在B浮层之上
+		</p>
+
+		点透发生的理由:  当手指触摸到屏幕的时候，系统生成两个事件，一个是touch 一个是click，touch先执行，touch执行完成后，A从文档树上面消失了，而且由于移动端click还有延迟200-300ms的关系，当系统要触发click的时候，发现在用户点击的位置上面，目前离用户最近的元素是B，所以就直接把click事件作用在B元素上面了.
+	</div>
+
+
+
+	<script>
+		var tap = document.querySelector('.tap');
+		var click = document.querySelector('.click'); 
+		//一、为tap添加touch事件  touch事件只是针对移动端，pc端无效
+		tap.addEventListener('touchstart',function(e) {
+			tap.style.visibility = "hidden";
+		});
+		click.addEventListener('click',function(e) {
+			click.style.background = "blue";
+		})
+	</script>
+</body>
+</html>
