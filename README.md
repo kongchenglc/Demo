@@ -85,3 +85,10 @@
 
 &emsp;&emsp;前端常用两种布局方式：**双飞翼布局**以及**圣杯布局**。[效果预览](https://kongchenglc.github.io/Demo/twoLayoutWays.html)。
 
+
+- [touchThrough.html](https://github.com/kongchenglc/Demo/blob/master/touchThrough.html)
+
+&emsp;&emsp;移动端**点透事件**。[效果预览](https://kongchenglc.github.io/Demo/touchThrough.html)。
+
+
+
