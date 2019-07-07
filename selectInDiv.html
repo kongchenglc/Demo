@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			color: white;
+			background-color: #ccc;
+			user-select: none;
+		}
+		#box1 {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		#box2 {
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		
+	</style>
+</head>
+<body>
+	文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
+	<div id='box1'>
+		文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
+	</div>
+	文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
+	<div id='box2'>
+		文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
+	</div>
+	文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本
+	<script>
+		(function() {
+			let selecting = null;
+
+			document.body.addEventListener('mousedown', function(event) {
+				console.log(event.target)
+				console.log(selecting)
+				if(selecting && selecting !== event.target) {
+					selecting.style.userSelect = 'none';
+				}
+				event.target.style.userSelect = 'text';
+				selecting = event.target
+
+			})
+		})()
+
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
