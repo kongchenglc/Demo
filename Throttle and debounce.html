@@ -39,6 +39,26 @@
 		}
 
 		window.onscroll = scrollFun(300);
+		
+		// 节流函数
+		function throttle(fn, gapTime) {
+		  let _lastTime = null;
+
+		  return function () {
+		    let _nowTime = + new Date()
+		    if (_nowTime - _lastTime > gapTime || !_lastTime) {
+		      fn();
+		      _lastTime = _nowTime
+		    }
+		  }
+		}
+		// 触发
+		let fn = ()=>{
+		  console.log('boom')
+		}
+
+		setInterval(throttle(fn,1000),10)
+
 	</script>
 
 
